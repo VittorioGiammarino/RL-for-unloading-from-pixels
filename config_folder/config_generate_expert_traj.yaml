@@ -1,0 +1,22 @@
+
+defaults:
+  - _self_
+
+#misc
+num_episodes: 10
+GUI: false
+seed: 1
+
+#data
+resize_height: 64
+resize_width: 64
+
+#env
+parcel_chooser: Heuristic #Either Heuristic or Random
+side_pick_only: true
+add_noise: false
+
+hydra:
+  run:
+    dir: ./store_expert_data/${now:%Y.%m.%d}
+

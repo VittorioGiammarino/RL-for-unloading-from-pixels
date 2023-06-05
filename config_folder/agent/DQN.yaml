@@ -1,0 +1,18 @@
+
+agent_name: DQN
+
+agent:
+  _target_: agents.DQN.DQN_Agent
+  input_shape: ??? # to be specified later
+  workspace: ???
+  device: ${device}
+  use_tb: ${use_tb}
+  critic_target_tau: ${critic_target_tau}
+  update_every_steps: ${update_every_steps}
+  decoder_nc: 1
+  learning_rate: ${learning_rate}
+  exploration_rate: ${exploration_rate}
+  num_expl_steps: ${num_expl_steps}
+  from_segm: ${from_segm}
+  safety_mask: ${safety_mask}
+

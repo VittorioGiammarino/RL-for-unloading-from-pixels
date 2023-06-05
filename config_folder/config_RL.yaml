@@ -1,0 +1,66 @@
+
+defaults:
+  - _self_
+  - agent@_global_: DQN
+  - override hydra/launcher: submitit_local
+  
+#misc
+use_tb: true
+seed: 1
+device: cuda
+GUI: false
+save_snapshot: false
+
+# train settings
+num_seed_steps: 100
+num_expl_steps: 500
+num_train_steps: 100000
+
+# interrupt when rollout goes too bad
+early_stop: false
+
+# env
+accuracy_error_weight: 2
+side_pick_only: true
+add_noise: false
+image_width: 64
+image_height: 64
+n_channels: 3
+reward_id: 0 # either 0 ir 1
+
+#options env
+from_segm: false
+safety_mask: false
+
+# eval
+eval_every_episodes: 10
+num_eval_episodes: 3
+
+# replay buffer
+replay_buffer_size: ${num_train_steps}
+nstep: 1
+batch_size: 16
+
+#Agent
+discount: 0.99
+learning_rate: 1e-4
+critic_target_tau: 0.005
+update_every_steps: 1
+exploration_rate: 0.1
+
+
+hydra:
+  run:
+    dir: ./experiments/train_RL/${agent_name}_safety_mask_${safety_mask}_from_segm_${from_segm}_reward_id_${reward_id}/${now:%H%M%S}_${hydra.job.override_dirname}
+  sweep:
+    dir: ./experiments/multirun_train_RL/${agent_name}_safety_mask_${safety_mask}_from_segm_${from_segm}_reward_id_${reward_id}/
+    subdir: ${now:%Y.%m.%d}_${now:%H%M%S}_${hydra.job.override_dirname}
+  launcher:
+    timeout_min: 18000000
+    cpus_per_task: 10
+    gpus_per_node: 1
+    tasks_per_node: 1
+    mem_gb: 160
+    nodes: 1
+    submitit_folder: ./experiments/multirun_train_RL/${agent_name}_safety_mask_${safety_mask}_from_segm_${from_segm}_reward_id_${reward_id}/${now:%Y.%m.%d}_${now:%H%M}
+

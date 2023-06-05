@@ -1,0 +1,14 @@
+
+__pycache__/
+
+sequential_picking_task/assets/**
+store_expert_data/**
+experiments/**
+LOG_FILES/**
+QSUBS/**
+
+Figures/**
+
+*.tar.xz
+*.sh
+*.mp4
