@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Kuka-KR70-URDF">
+  <link
+    name="Base">
+    <inertial>
+      <origin
+        xyz="-0.030929 -0.012384 0.014671"
+        rpy="0 0 0" />
+      <mass
+        value="30.385" />
+      <inertia
+        ixx="0.38941"
+        ixy="0.060696"
+        ixz="-0.0047083"
+        iyy="1.0819"
+        iyz="0.00029206"
+        izz="0.87424" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Rotating Base">
+    <inertial>
+      <origin
+        xyz="0.060045 0.011667 0.24706"
+        rpy="0 0 0" />
+      <mass
+        value="56.095" />
+      <inertia
+        ixx="1.7124"
+        ixy="0.020887"
+        ixz="-0.52525"
+        iyy="2.1535"
+        iyz="-0.031415"
+        izz="1.3169" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Rotating Base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Rotating Base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint 1"
+    type="continuous">
+    <origin
+      xyz="0.049656 -0.015347 0.070862"
+      rpy="0 0 1.3143" />
+    <parent
+      link="Base" />
+    <child
+      link="Rotating Base" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="Arm Segment 1">
+    <inertial>
+      <origin
+        xyz="0.002698 -0.26551 0.40155"
+        rpy="0 0 0" />
+      <mass
+        value="20.102" />
+      <inertia
+        ixx="1.3389"
+        ixy="-0.001185"
+        ixz="0.02478"
+        iyy="1.3628"
+        iyz="0.11122"
+        izz="0.12917" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Arm Segment 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Arm Segment 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm Joint 1"
+    type="continuous">
+    <origin
+      xyz="0.175 0.034678 0.405"
+      rpy="0 -0.11505 0" />
+    <parent
+      link="Rotating Base" />
+    <child
+      link="Arm Segment 1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Arm Segment 2">
+    <inertial>
+      <origin
+        xyz="0.030512 -0.012385 0.016244"
+        rpy="0 0 0" />
+      <mass
+        value="36.684" />
+      <inertia
+        ixx="0.56397"
+        ixy="0.064838"
+        ixz="-0.082203"
+        iyy="0.78695"
+        iyz="0.0037968"
+        izz="1.0152" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Arm Segment 2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Arm Segment 2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm Joint 2"
+    type="continuous">
+    <origin
+      xyz="0 0 0.89"
+      rpy="0 0.47605 0" />
+    <parent
+      link="Arm Segment 1" />
+    <child
+      link="Arm Segment 2" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Arm Segment 3">
+    <inertial>
+      <origin
+        xyz="0.43146 0.028053 -6.0745E-05"
+        rpy="0 0 0" />
+      <mass
+        value="15.154" />
+      <inertia
+        ixx="0.070105"
+        ixy="-0.099009"
+        ixz="0.00018278"
+        iyy="0.72993"
+        iyz="-2.5788E-05"
+        izz="0.7484" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Arm Segment 3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Arm Segment 3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm Joint 3"
+    type="continuous">
+    <origin
+      xyz="0.29549 -0.034678 0.05"
+      rpy="0.078632 0 0" />
+    <parent
+      link="Arm Segment 2" />
+    <child
+      link="Arm Segment 3" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Arm Segment 4">
+    <inertial>
+      <origin
+        xyz="0.034816 -0.033367 -7.8652E-05"
+        rpy="0 0 0" />
+      <mass
+        value="5.1749" />
+      <inertia
+        ixx="0.019894"
+        ixy="-0.0037952"
+        ixz="-3.1764E-05"
+        iyy="0.032541"
+        iyz="2.0356E-05"
+        izz="0.033447" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Arm Segment 4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Arm Segment 4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm Joint 4"
+    type="continuous">
+    <origin
+      xyz="0.73951 0 0"
+      rpy="0 -1.4401 0" />
+    <parent
+      link="Arm Segment 3" />
+    <child
+      link="Arm Segment 4" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Arm Segment 5">
+    <inertial>
+      <origin
+        xyz="0.031639 -2.9716E-06 -4.1515E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.36297" />
+      <inertia
+        ixx="0.00080922"
+        ixy="9.9703E-10"
+        ixz="2.4184E-07"
+        iyy="0.00044078"
+        iyz="1.1575E-07"
+        izz="0.00044169" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Arm Segment 5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Arm Segment 5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm Joint 5"
+    type="continuous">
+    <origin
+      xyz="0.13479 0 0"
+      rpy="0.98332 0 0" />
+    <parent
+      link="Arm Segment 4" />
+    <child
+      link="Arm Segment 5" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  
+  <!--
+  <link name="tool_tip">
+    <inertial>
+      <mass value="0.0"/>
+      <origin rpy="0.98332 0 0" xyz="0.13479 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial> -->
+    <!-- <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual> -->
+  <!--
+  </link>
+  <joint name="Arm Joint 5-tool_tip" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.12"/>
+    <parent link="Arm Joint 5"/>
+    <child link="tool_tip"/>
+  </joint> -->
+
+  <link
+    name="Motor 1">
+    <inertial>
+      <origin
+        xyz="0.058996 0.24434 0.65537"
+        rpy="0 0 0" />
+      <mass
+        value="5.3004" />
+      <inertia
+        ixx="0.037634"
+        ixy="0.00057135"
+        ixz="3.7437E-05"
+        iyy="0.017681"
+        iyz="-3.0733E-05"
+        izz="0.038584" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Motor 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.4 0.4 0.4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Motor 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor Connection 1"
+    type="fixed">
+    <origin
+      xyz="0.4653 0.060319 0.1215"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="Rotating Base" />
+    <child
+      link="Motor 1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Motor 2">
+    <inertial>
+      <origin
+        xyz="0.058996 0.24434 0.65537"
+        rpy="0 0 0" />
+      <mass
+        value="5.3004" />
+      <inertia
+        ixx="0.037634"
+        ixy="0.00057135"
+        ixz="3.7437E-05"
+        iyy="0.017681"
+        iyz="-3.0734E-05"
+        izz="0.038584" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Motor 2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.4 0.4 0.4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Kuka-KR70-URDF/meshes/Motor 2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor Connection 2"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.17"
+      rpy="0 0 0" />
+    <parent
+      link="Rotating Base" />
+    <child
+      link="Motor 2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

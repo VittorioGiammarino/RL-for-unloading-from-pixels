@@ -21,20 +21,7 @@ conda env create -f environment.yml
 conda activate RL4U
 ```
 
-**Step 3.** Download the environment assets within the GitHub Repository
-
-Assets: https://drive.google.com/file/d/1UqU3PPLOr9Y4cY9mQNXKK4QkxlnVVVlB/view?usp=sharing
-
-or 
-
-```shell
-pip install gdown
-gdown 1UqU3PPLOr9Y4cY9mQNXKK4QkxlnVVVlB
-tar -xf assets.tar.xz
-rm assets.tar.xz
-```
-
-**Step 4.** Test environment
+**Step 3.** Test environment
 
 To test the installation run the following command
 
@@ -42,7 +29,7 @@ To test the installation run the following command
 python test_scripted_policy.py num_episodes=1 GUI=true
 ```
 
-**Step 5.** Run experiments
+**Step 4.** Run experiments
 
 Run experiments for Mask-off
 
